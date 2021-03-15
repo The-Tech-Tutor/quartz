@@ -1,0 +1,25 @@
+server:
+  servlet:
+    context-path: /api
+  compression:
+    enabled: true
+  port: 8090
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/scheduler
+    username: techtutor
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: never
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
